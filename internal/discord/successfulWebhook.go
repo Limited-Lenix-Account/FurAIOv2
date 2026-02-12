@@ -15,11 +15,10 @@ import (
 
 const (
 	avatarURL  = "https://pbs.twimg.com/profile_images/1805435885149650944/9D7uUhny_400x400.jpg"
-	webhookURL = `https://discord.com/api/webhooks/830552945154195468/zUru092mfwIWSu8k65IRPI56ZXQUM5e3-ofGIL1RRtOsTyWIEGEFa1wnmzELODdyU9Eh`
+	webhookURL = ""
 )
 
 func HotelCheckoutWebhook(data SuccessfulHotelData) {
-	// How can I do this and not get an import cycle error
 	snowflakeReg := regexp.MustCompile("[0-9]{18,19}")
 	it, _ := strconv.Atoi(snowflakeReg.FindString(webhookURL))
 	split := strings.Split(webhookURL, "/")
@@ -70,7 +69,6 @@ func HotelCheckoutWebhook(data SuccessfulHotelData) {
 }
 
 func PaLiquorCheckoutWebhook(data PaDiscordData) {
-	// How can I do this and not get an import cycle error
 	snowflakeReg := regexp.MustCompile("[0-9]{18,19}")
 	it, _ := strconv.Atoi(snowflakeReg.FindString(webhookURL))
 	split := strings.Split(webhookURL, "/")
